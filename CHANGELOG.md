@@ -4,3 +4,6 @@
 3. IHAKI-3 Sistemi AeroSuperAdmin:Sistem yöneticisin anında müdahaleler yapıp entryleri düzenleyebilceği bir panel AeroAdmin:Çalışanların kiralamaları ve uçakları yönetebileceği bir panel ve AeroLease:Müşterilerin kiralama yapıp mevcut uçaklarını kontrol edebileceği panel olmak üzere 3 domaine böldüm.
 4. IHAKI-4 Tema olarak Metronik kullanmaya karar verdim. Bireysel bir proje için satın aldığım kopyası üzerinden temayı parçaladım. Static ve template dosyalarını hazırladım.
 5. IHAKI-5 Ana sayfayı, login ekranlarını, login sistemini, login hatalarını kodladım. Grafikleri düzenledim.
+
+# Relase 0.1.0
+6. IHAKI-6 Kayıt şablonlarını oluşturdum. Fonkisyonlarını yazdım. Ayrıca login sonrası APP ekranlarında menü düzenlemeleri yaptım.
