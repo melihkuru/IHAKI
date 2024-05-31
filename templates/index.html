@@ -30,7 +30,7 @@ License: For each use you must have a valid license purchased only from above li
     <meta property="og:url" content="https://keenthemes.com/metronic"/>
     <meta property="og:site_name" content="Keenthemes | Metronic"/>
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8"/>
-    <link rel="shortcut icon" href="assets/media/logos/favicon.ico"/>
+    <link rel="shortcut icon" href="{% static 'metronic/global/img/favicon.ico' %}"/>
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/>
     <!--end::Fonts-->
@@ -49,7 +49,7 @@ License: For each use you must have a valid license purchased only from above li
     <div class="mb-0" id="home">
         <!--begin::Wrapper-->
         <div class="bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom landing-dark-bg"
-             style="background-image: url(assets/media/svg/illustrations/landing.svg)">
+             style="background-image: url({% static 'metronic/global/img/landing.svg' %}">
             <!--begin::Header-->
             <div class="landing-header" data-kt-sticky="true" data-kt-sticky-name="landing-header"
                  data-kt-sticky-offset="{default: '200px', lg: '300px'}">
@@ -77,10 +77,10 @@ License: For each use you must have a valid license purchased only from above li
                             </button>
                             <!--end::Mobile menu toggle-->
                             <!--begin::Logo image-->
-                            <a href="../../demo16/dist/landing.html">
+                            <a href="/">
                                 <img alt="Logo" src="{% static 'metronic/global/img/akinci.png' %}"
                                      class="logo-default h-25px h-lg-30px"/>
-                                <img alt="Logo" src="assets/media/logos/logo-landing-dark.svg"
+                                <img alt="Logo" src="{% static 'metronic/global/img/akinci.png' %}"
                                      class="logo-sticky h-20px h-lg-25px"/>
                             </a>
                             <!--end::Logo image-->
@@ -101,47 +101,52 @@ License: For each use you must have a valid license purchased only from above li
                                     <div class="menu-item">
                                         <!--begin::Menu link-->
                                         <a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="#kt_body"
-                                           data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Home</a>
+                                           data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Ana Sayfa</a>
                                         <!--end::Menu link-->
                                     </div>
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
                                     <div class="menu-item">
                                         <!--begin::Menu link-->
-                                        <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#how-it-works"
-                                           data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">How it Works</a>
+                                        <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="/AeroSuperAdmin"
+                                           data-kt-scroll-toggle="true" target="_blank" data-kt-drawer-dismiss="true">Sistem
+                                            Yönetici Girişi</a>
                                         <!--end::Menu link-->
                                     </div>
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
                                     <div class="menu-item">
                                         <!--begin::Menu link-->
-                                        <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#achievements"
-                                           data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Achievements</a>
+                                        <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="/AeroAdmin"
+                                           data-kt-scroll-toggle="true" target="_blank" data-kt-drawer-dismiss="true">Kiralama
+                                            Sorumlusu Girişi</a>
                                         <!--end::Menu link-->
                                     </div>
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
                                     <div class="menu-item">
                                         <!--begin::Menu link-->
-                                        <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#team"
-                                           data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Team</a>
+                                        <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="/AeroLease"
+                                           data-kt-scroll-toggle="true" target="_blank" data-kt-drawer-dismiss="true">Müşteri
+                                            Girişi</a>
                                         <!--end::Menu link-->
                                     </div>
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
                                     <div class="menu-item">
                                         <!--begin::Menu link-->
-                                        <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#portfolio"
-                                           data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Portfolio</a>
+                                        <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="/AeroAdmin/api/v1"
+                                           data-kt-scroll-toggle="true" target="_blank" data-kt-drawer-dismiss="true">Uygulama
+                                            API</a>
                                         <!--end::Menu link-->
                                     </div>
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
                                     <div class="menu-item">
                                         <!--begin::Menu link-->
-                                        <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#pricing"
-                                           data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Pricing</a>
+                                        <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="/AeroLease/api/v1"
+                                           data-kt-scroll-toggle="true" target="_blank" data-kt-drawer-dismiss="true">Müşteri
+                                            API</a>
                                         <!--end::Menu link-->
                                     </div>
                                     <!--end::Menu item-->
@@ -152,8 +157,7 @@ License: For each use you must have a valid license purchased only from above li
                         <!--end::Menu wrapper-->
                         <!--begin::Toolbar-->
                         <div class="flex-equal text-end ms-1">
-                            <a href="../../demo16/dist/authentication/flows/basic/sign-in.html" class="btn btn-success">Sign
-                                In</a>
+                            <a href="/AeroLease/SignUp" target="_blank" class="btn btn-danger">Üye Ol</a>
                         </div>
                         <!--end::Toolbar-->
                     </div>
@@ -167,59 +171,27 @@ License: For each use you must have a valid license purchased only from above li
                 <!--begin::Heading-->
                 <div class="text-center mb-5 mb-lg-10 py-10 py-lg-20">
                     <!--begin::Title-->
-                    <h1 class="text-white lh-base fw-bolder fs-2x fs-lg-3x mb-15">Build An Outstanding Solutions
-                        <br/>with
-                        <span style="background: linear-gradient(to right, #12CE5D 0%, #FFD80C 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
-								<span id="kt_landing_hero_text">The Best Theme Ever</span>
+                    <h1 class="text-white lh-base fw-bolder fs-2x fs-lg-3x mb-15">Milli S/İHA'ları Geliştiren
+                        <br/>BAYKAR'dan
+                        <span style="background: linear-gradient(to right, #950637 0%, rgba(236,227,227,0.57) 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">
+								<span id="kt_landing_hero_text">İHA Kiralama Sistemi</span>
 							</span></h1>
                     <!--end::Title-->
                     <!--begin::Action-->
-                    <a href="../../demo16/dist/index.html" class="btn btn-primary">Try Metronic</a>
+                    <a href="/" class="btn btn-danger" style="background-color:#e30a17;padding: 2px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="75" height="50"
+                             viewBox="0 -30000 90000 60000">
+                            <title>Flag of Turkey</title>
+                            <path fill="#e30a17" d="m0-30000h90000v60000H0z"/>
+                            <path fill="#fff"
+                                  d="m41750 0 13568-4408-8386 11541V-7133l8386 11541zm925 8021a15000 15000 0 1 1 0-16042 12000 12000 0 1 0 0 16042z"/>
+                        </svg>
+                    </a>
                     <!--end::Action-->
                 </div>
                 <!--end::Heading-->
                 <!--begin::Clients-->
-                <div class="d-flex flex-center flex-wrap position-relative px-5">
-                    <!--begin::Client-->
-                    <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Fujifilm">
-                        <img src="assets/media/svg/brand-logos/fujifilm.svg" class="mh-30px mh-lg-40px" alt=""/>
-                    </div>
-                    <!--end::Client-->
-                    <!--begin::Client-->
-                    <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Vodafone">
-                        <img src="assets/media/svg/brand-logos/vodafone.svg" class="mh-30px mh-lg-40px" alt=""/>
-                    </div>
-                    <!--end::Client-->
-                    <!--begin::Client-->
-                    <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="KPMG International">
-                        <img src="assets/media/svg/brand-logos/kpmg.svg" class="mh-30px mh-lg-40px" alt=""/>
-                    </div>
-                    <!--end::Client-->
-                    <!--begin::Client-->
-                    <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Nasa">
-                        <img src="assets/media/svg/brand-logos/nasa.svg" class="mh-30px mh-lg-40px" alt=""/>
-                    </div>
-                    <!--end::Client-->
-                    <!--begin::Client-->
-                    <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Aspnetzero">
-                        <img src="assets/media/svg/brand-logos/aspnetzero.svg" class="mh-30px mh-lg-40px" alt=""/>
-                    </div>
-                    <!--end::Client-->
-                    <!--begin::Client-->
-                    <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="AON - Empower Results">
-                        <img src="assets/media/svg/brand-logos/aon.svg" class="mh-30px mh-lg-40px" alt=""/>
-                    </div>
-                    <!--end::Client-->
-                    <!--begin::Client-->
-                    <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Hewlett-Packard">
-                        <img src="assets/media/svg/brand-logos/hp-3.svg" class="mh-30px mh-lg-40px" alt=""/>
-                    </div>
-                    <!--end::Client-->
-                    <!--begin::Client-->
-                    <div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Truman">
-                        <img src="assets/media/svg/brand-logos/truman.svg" class="mh-30px mh-lg-40px" alt=""/>
-                    </div>
-                    <!--end::Client-->
+                <div class="d-flex flex-center flex-wrap position-relative px-5"><!--end::Client-->
                 </div>
                 <!--end::Clients-->
             </div>
@@ -257,97 +229,32 @@ License: For each use you must have a valid license purchased only from above li
                         <!--begin::Block-->
                         <div class="rounded landing-dark-border p-9 mb-10">
                             <!--begin::Title-->
-                            <h2 class="text-white">Would you need a Custom License?</h2>
+                            <h2 class="text-white">Herhangi bir sorunuz mu var?</h2>
                             <!--end::Title-->
                             <!--begin::Text-->
-                            <span class="fw-normal fs-4 text-gray-700">Email us to
-									<a href="https://keenthemes.com/support"
-                                       class="text-white opacity-50 text-hover-primary">support@keenthemes.com</a></span>
+                            <span class="fw-normal fs-4 text-gray-700">Bana yazmaktan çekinmeyin
+									<a href="mailto:melihkuru1998@gmail.com"
+                                       class="text-white opacity-50 text-hover-primary">melihkuru1998@gmail.com</a></span>
                             <!--end::Text-->
                         </div>
                         <!--end::Block-->
                         <!--begin::Block-->
-                        <div class="rounded landing-dark-border p-9">
-                            <!--begin::Title-->
-                            <h2 class="text-white">How About a Custom Project?</h2>
-                            <!--end::Title-->
-                            <!--begin::Text-->
-                            <span class="fw-normal fs-4 text-gray-700">Use Our Custom Development Service.
-									<a href="../../demo16/dist/pages/profile/overview.html"
-                                       class="text-white opacity-50 text-hover-primary">Click to Get a Quote</a></span>
-                            <!--end::Text-->
-                        </div>
+
                         <!--end::Block-->
                     </div>
                     <!--end::Col-->
                     <!--begin::Col-->
                     <div class="col-lg-6 ps-lg-16">
                         <!--begin::Navs-->
-                        <div class="d-flex justify-content-center">
-                            <!--begin::Links-->
-                            <div class="d-flex fw-bold flex-column me-20">
-                                <!--begin::Subtitle-->
-                                <h4 class="fw-bolder text-gray-400 mb-6">More for Metronic</h4>
-                                <!--end::Subtitle-->
-                                <!--begin::Link-->
-                                <a href="#" class="text-white opacity-50 text-hover-primary fs-5 mb-6">FAQ</a>
-                                <!--end::Link-->
-                                <!--begin::Link-->
-                                <a href="#" class="text-white opacity-50 text-hover-primary fs-5 mb-6">Documentaions</a>
-                                <!--end::Link-->
-                                <!--begin::Link-->
-                                <a href="#" class="text-white opacity-50 text-hover-primary fs-5 mb-6">Video Tuts</a>
-                                <!--end::Link-->
-                                <!--begin::Link-->
-                                <a href="#" class="text-white opacity-50 text-hover-primary fs-5 mb-6">Changelog</a>
-                                <!--end::Link-->
-                                <!--begin::Link-->
-                                <a href="#" class="text-white opacity-50 text-hover-primary fs-5 mb-6">Github</a>
-                                <!--end::Link-->
-                                <!--begin::Link-->
-                                <a href="#" class="text-white opacity-50 text-hover-primary fs-5">Tutorials</a>
-                                <!--end::Link-->
-                            </div>
-                            <!--end::Links-->
-                            <!--begin::Links-->
-                            <div class="d-flex fw-bold flex-column ms-lg-20">
-                                <!--begin::Subtitle-->
-                                <h4 class="fw-bolder text-gray-400 mb-6">Stay Connected</h4>
-                                <!--end::Subtitle-->
-                                <!--begin::Link-->
-                                <a href="#" class="mb-6">
-                                    <img src="assets/media/svg/brand-logos/facebook-4.svg" class="h-20px me-2" alt=""/>
-                                    <span class="text-white opacity-50 text-hover-primary fs-5 mb-6">Facebook</span>
-                                </a>
-                                <!--end::Link-->
-                                <!--begin::Link-->
-                                <a href="#" class="mb-6">
-                                    <img src="assets/media/svg/brand-logos/github.svg" class="h-20px me-2" alt=""/>
-                                    <span class="text-white opacity-50 text-hover-primary fs-5 mb-6">Github</span>
-                                </a>
-                                <!--end::Link-->
-                                <!--begin::Link-->
-                                <a href="#" class="mb-6">
-                                    <img src="assets/media/svg/brand-logos/twitter.svg" class="h-20px me-2" alt=""/>
-                                    <span class="text-white opacity-50 text-hover-primary fs-5 mb-6">Twitter</span>
-                                </a>
-                                <!--end::Link-->
-                                <!--begin::Link-->
-                                <a href="#" class="mb-6">
-                                    <img src="assets/media/svg/brand-logos/dribbble-icon-1.svg" class="h-20px me-2"
-                                         alt=""/>
-                                    <span class="text-white opacity-50 text-hover-primary fs-5 mb-6">Dribbble</span>
-                                </a>
-                                <!--end::Link-->
-                                <!--begin::Link-->
-                                <a href="#" class="mb-6">
-                                    <img src="assets/media/svg/brand-logos/instagram-2-1.svg" class="h-20px me-2"
-                                         alt=""/>
-                                    <span class="text-white opacity-50 text-hover-primary fs-5 mb-6">Instagram</span>
-                                </a>
-                                <!--end::Link-->
-                            </div>
-                            <!--end::Links-->
+                        <div class="rounded landing-dark-border p-9">
+                            <!--begin::Title-->
+                            <h2 class="text-white">Hakkımda detaylı bilgiye nerden ulaşabilirsiniz?</h2>
+                            <!--end::Title-->
+                            <!--begin::Text-->
+                            <span class="fw-normal fs-4 text-gray-700">Linkedin sayfam için
+									<a target="_blank" href="https://www.linkedin.com/in/melihkuru/"
+                                       class="text-white opacity-50 text-hover-primary">buraya tıklayabilirsiniz.</a></span>
+                            <!--end::Text-->
                         </div>
                         <!--end::Navs-->
                     </div>
@@ -365,26 +272,22 @@ License: For each use you must have a valid license purchased only from above li
                 <div class="d-flex flex-column flex-md-row flex-stack py-7 py-lg-10">
                     <!--begin::Copyright-->
                     <div class="d-flex align-items-center order-2 order-md-1">
-                        <!--begin::Logo-->
-                        <a href="../../demo16/dist/landing.html">
-                            <img alt="Logo" src="assets/media/logos/logo-landing.svg" class="h-15px h-md-20px"/>
-                        </a>
-                        <!--end::Logo image-->
                         <!--begin::Logo image-->
-                        <span class="mx-5 fs-6 fw-bold text-gray-600 pt-1" href="https://keenthemes.com">© 2021 Keenthemes Inc.</span>
+                        <span class="mx-5 fs-6 fw-bold text-gray-600 pt-1">©{{ year }} Melih KURU. Akıllı Web Sistemleri Arka Uç Yazılım Teknik Sınavı İçin Gururla Yapıldı.</span>
                         <!--end::Logo image-->
                     </div>
                     <!--end::Copyright-->
                     <!--begin::Menu-->
                     <ul class="menu menu-gray-600 menu-hover-primary fw-bold fs-6 fs-md-5 order-1 mb-5 mb-md-0">
                         <li class="menu-item">
-                            <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
+                            <a href="https://baykartech.com/tr/" target="_blank" class="menu-link px-2">Baykar</a>
                         </li>
                         <li class="menu-item mx-5">
-                            <a href="https://keenthemes.com/support" target="_blank" class="menu-link px-2">Support</a>
+                            <a href="https://keenthemes.com/" target="_blank" class="menu-link px-2">Metronik</a>
                         </li>
                         <li class="menu-item">
-                            <a href="" target="_blank" class="menu-link px-2">Purchase</a>
+                            <a href="https://github.com/melihkuru/IHAKI" target="_blank"
+                               class="menu-link px-2">Github</a>
                         </li>
                     </ul>
                     <!--end::Menu-->
@@ -416,14 +319,11 @@ License: For each use you must have a valid license purchased only from above li
 <!--begin::Javascript-->
 <!--begin::Global Javascript Bundle(used by all pages)-->
 <script src="{% static 'metronic/global/scripts/plugins.bundle.js' %}"></script>
-<script src="{% static 'metronic/global/scripts/script.bundle.js' %}"></script>
+<script src="{% static 'metronic/global/scripts/scripts.bundle.js' %}"></script>
 <!--end::Global Javascript Bundle-->
-<!--begin::Page Vendors Javascript(used by this page)-->
-<script src="assets/plugins/custom/fslightbox/fslightbox.bundle.js"></script>
-<script src="assets/plugins/custom/typedjs/typedjs.bundle.js"></script>
 <!--end::Page Vendors Javascript-->
 <!--begin::Page Custom Javascript(used by this page)-->
-<script src="assets/js/custom/landing.js"></script>
+<script src="{% static 'metronic/global/scripts/landing.js' %}"></script>
 <!--end::Page Custom Javascript-->
 <!--end::Javascript-->
 </body>

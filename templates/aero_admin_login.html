@@ -30,7 +30,7 @@ License: For each use you must have a valid license purchased only from above li
     <meta property="og:url" content="https://keenthemes.com/metronic"/>
     <meta property="og:site_name" content="Keenthemes | Metronic"/>
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8"/>
-    <link rel="shortcut icon" href="assets/media/logos/favicon.ico"/>
+    <link rel="shortcut icon" href="{% static 'metronic/global/img/favicon.ico' %}"/>
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/>
     <!--end::Fonts-->
@@ -48,28 +48,12 @@ License: For each use you must have a valid license purchased only from above li
     <div class="d-flex flex-column flex-lg-row flex-column-fluid">
         <!--begin::Aside-->
         <div class="d-flex flex-column flex-lg-row-auto w-xl-600px positon-xl-relative"
-             style="background-color: #F2C98A">
+             style="background-image: url('/static/metronic/global/img/Mini2.jpeg');background-position: center;width: 600px;background-size: cover;">
             <!--begin::Wrapper-->
             <div class="d-flex flex-column position-xl-fixed top-0 bottom-0 w-xl-600px scroll-y">
                 <!--begin::Content-->
-                <div class="d-flex flex-row-fluid flex-column text-center p-10 pt-lg-20">
-                    <!--begin::Logo-->
-                    <a href="../../demo16/dist/index.html" class="py-9 mb-5">
-                        <img alt="Logo" src="assets/media/logos/logo-2.svg" class="h-60px"/>
-                    </a>
-                    <!--end::Logo-->
-                    <!--begin::Title-->
-                    <h1 class="fw-bolder fs-2qx pb-5 pb-md-10" style="color: #986923;">Welcome to Metronic</h1>
-                    <!--end::Title-->
-                    <!--begin::Description-->
-                    <p class="fw-bold fs-2" style="color: #986923;">Discover Amazing Metronic
-                        <br/>with great build tools</p>
-                    <!--end::Description-->
-                </div>
                 <!--end::Content-->
                 <!--begin::Illustration-->
-                <div class="d-flex flex-row-auto bgi-no-repeat bgi-position-x-center bgi-size-contain bgi-position-y-bottom min-h-100px min-h-lg-350px"
-                     style="background-image: url(assets/media/illustrations/sketchy-1/13.png"></div>
                 <!--end::Illustration-->
             </div>
             <!--end::Wrapper-->
@@ -82,18 +66,14 @@ License: For each use you must have a valid license purchased only from above li
                 <!--begin::Wrapper-->
                 <div class="w-lg-500px p-10 p-lg-15 mx-auto">
                     <!--begin::Form-->
-                    <form class="form w-100" id="kt_sign_in_form2" action="{% url 'aero_admin_login' %}" method="post">
+                    <form class="form w-100" id="kt_sign_in_form" action="{% url 'aero_admin_login' %}" method="post">
                         {% csrf_token %}
                         <!--begin::Heading-->
                         <div class="text-center mb-10">
                             <!--begin::Title-->
-                            <h1 class="text-dark mb-3">Sign In to Metronic</h1>
+                            <h1 class="text-dark mb-3">İHA Kiralama Yönetimi Giriş</h1>
                             <!--end::Title-->
                             <!--begin::Link-->
-                            <div class="text-gray-400 fw-bold fs-4">New Here?
-                                <a href="../../demo16/dist/authentication/layouts/aside/sign-up.html"
-                                   class="link-primary fw-bolder">Create an Account</a></div>
-                            <!--end::Link-->
                         </div>
                         <!--begin::Heading-->
                         <!--begin::Input group-->
@@ -102,7 +82,7 @@ License: For each use you must have a valid license purchased only from above li
                             <label class="form-label fs-6 fw-bolder text-dark">Email</label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input class="form-control form-control-lg form-control-solid" type="text" name="username"
+                            <input class="form-control form-control-lg form-control-solid" type="text" name="email"
                                    autocomplete="off"/>
                             <!--end::Input-->
                         </div>
@@ -112,12 +92,9 @@ License: For each use you must have a valid license purchased only from above li
                             <!--begin::Wrapper-->
                             <div class="d-flex flex-stack mb-2">
                                 <!--begin::Label-->
-                                <label class="form-label fw-bolder text-dark fs-6 mb-0">Password</label>
+                                <label class="form-label fw-bolder text-dark fs-6 mb-0">Şifre</label>
                                 <!--end::Label-->
                                 <!--begin::Link-->
-                                <a href="../../demo16/dist/authentication/layouts/aside/password-reset.html"
-                                   class="link-primary fs-6 fw-bolder">Forgot Password ?</a>
-                                <!--end::Link-->
                             </div>
                             <!--end::Wrapper-->
                             <!--begin::Input-->
@@ -130,28 +107,45 @@ License: For each use you must have a valid license purchased only from above li
                         <div class="text-center">
                             <!--begin::Submit button-->
                             <button type="submit" id="kt_sign_in_submit2" class="btn btn-lg btn-primary w-100 mb-5">
-                                <span class="indicator-label">Continue</span>
+                                <span class="indicator-label">Giriş</span>
                             </button>
                             <!--end::Submit button-->
                         </div>
                         <!--end::Actions-->
                     </form>
                     <!--end::Form-->
+                    {% if error_message %}
+                    <div class="alert alert-dismissible bg-light-danger border border-danger d-flex flex-column flex-sm-row p-5 mb-10">
+                        <!--begin::Icon-->
+                        <span class="svg-icon svg-icon-2hx svg-icon-danger me-4 mb-5 mb-sm-0">!</span>
+                        <!--end::Icon-->
+                        <!--begin::Wrapper-->
+                        <div class="d-flex flex-column pe-0 pe-sm-10">
+                            <!--begin::Title-->
+                            <h5 class="mb-1">Hata</h5>
+                            <!--end::Title-->
+                            <!--begin::Content-->
+                            <span>{{ error_message }}</span>
+                            <!--end::Content-->
+                        </div>
+                        <!--end::Wrapper-->
+                    </div>
+                    {% endif %}
                 </div>
                 <!--end::Wrapper-->
             </div>
-            {% if error_message %}
-            <p style="color: red;">{{ error_message }}</p>
-            {% endif %}
+
+            <!--begin::Alert-->
+            <!--end::Alert-->
+
             <!--end::Content-->
             <!--begin::Footer-->
             <div class="d-flex flex-center flex-wrap fs-6 p-5 pb-0">
                 <!--begin::Links-->
                 <div class="d-flex flex-center fw-bold fs-6">
-                    <a href="https://keenthemes.com" class="text-muted text-hover-primary px-2"
-                       target="_blank">About</a>
-                    <a href="https://keenthemes.com/support" class="text-muted text-hover-primary px-2" target="_blank">Support</a>
-                    <a href="https://1.envato.market/EA4JP" class="text-muted text-hover-primary px-2" target="_blank">Purchase</a>
+                    <a href="https://keenthemes.com" class="text-muted text-hover-primary px-2">Baykar</a>
+                    <a href="mailto:support@keenthemes.com" class="text-muted text-hover-primary px-2">Metronik</a>
+                    <a href="https://1.envato.market/EA4JP" class="text-muted text-hover-primary px-2">Github</a>
                 </div>
                 <!--end::Links-->
             </div>
@@ -166,7 +160,7 @@ License: For each use you must have a valid license purchased only from above li
 <!--begin::Javascript-->
 <!--begin::Global Javascript Bundle(used by all pages)-->
 <script src="{% static 'metronic/global/scripts/plugins.bundle.js' %}"></script>
-<script src="{% static 'metronic/global/scripts/script.bundle.js' %}"></script>
+<script src="{% static 'metronic/global/scripts/scripts.bundle.js' %}"></script>
 <!--end::Global Javascript Bundle-->
 <!--begin::Page Custom Javascript(used by this page)-->
 <script src="{% static 'metronic/global/scripts/general.js' %}"></script>
