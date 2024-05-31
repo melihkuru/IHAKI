@@ -31,9 +31,10 @@ environ.Env.read_env()
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 ALLOWED_HOSTS = []
+DEBUG = env('DEBUG')
+BASE_PATH = "" if os.getenv('BASE_PATH') == "/" or os.getenv('BASE_PATH') == "" or os.getenv(
+    'BASE_PATH') is None else os.getenv('BASE_PATH')[1:] + '/'
 
 # Application definition
 
@@ -109,7 +110,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -120,7 +120,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -134,11 +133,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
-
-ALLOWED_HOSTS = ['*']
-DEBUG = env('DEBUG')
-BASE_PATH = "" if os.getenv('BASE_PATH') == "/" or os.getenv('BASE_PATH') == "" or os.getenv(
-    'BASE_PATH') is None else os.getenv('BASE_PATH')[1:] + '/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
