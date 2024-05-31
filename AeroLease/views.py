@@ -9,7 +9,7 @@ def login_process(request):
 
     if request.method == 'GET':
         context = ''
-        return render(request, 'admin_login.html', {'context': context})
+        return render(request, 'aero_lease_login.html', {'context': context})
 
     if request.method == 'POST':
         username = request.POST.get('username', '')
@@ -26,4 +26,4 @@ def login_process(request):
 
 @login_required
 def app_view(request):
-    return render(request, 'admin_app.html')
+    return render(request, 'aero_lease_app.html')

@@ -18,13 +18,18 @@ from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
 
-from IHAKI.views import home_view
+import AeroAdmin.views
+import AeroLease.views
+from IHAKI.views import home_view, not_login_view
 
 urlpatterns = [
     path('', home_view),
+    path('NotLoginRedirect', not_login_view),
     path('AeroSuperAdmin/', admin.site.urls),
-    path('AeroAdmin/', admin.site.urls),
-    path('AeroLease/', admin.site.urls),
+    path('AeroAdmin/', AeroAdmin.views.app_view),
+    path('AeroAdmin/Login/', AeroAdmin.views.login_process, name="aero_admin_login"),
+    path('AeroLease/', AeroLease.views.app_view),
+    path('AeroLease/Login/', AeroLease.views.login_process, name="aero_lease_login"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
