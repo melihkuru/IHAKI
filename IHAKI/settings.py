@@ -139,6 +139,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Deploy sırasında konfig olarak alınan log leveli ve log yöneticisi ayarları.
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -160,7 +161,10 @@ LOGGING = {
     },
 }
 
+# Kullanıcı browser kapattığında oturumu düşecektir. Güvelik için kullandığım bir özellik.
 SESSION_EXPIRE_AT_BROWSER_CLOSE = env('SESSION_EXPIRE_AT_BROWSER_CLOSE')
 SESSION_COOKIE_AGE = int(env('SESSION_COOKIE_AGE_IN_SEC'))
 
+# Bir sistem içinde birden fazla panel yönettiğimiz için django'nun dahili üye olmayan yönlendirmesi işe yaramıyordu.
+# Bu endpoint geldiğiniz ve gitmek istediğiniz yeri tespit ederek doğru giriş paneline yönlendiriyor.
 LOGIN_URL = '/NotLoginRedirect'
