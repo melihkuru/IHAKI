@@ -32,6 +32,7 @@ def login_process(request):
             context = {'error_message': 'Girdiğiniz şifre bilgisi yanlıştır. Lütfen şifrenizi kontrol ediniz.'}
             return render(request, 'aero_lease_login.html', context)
 
+
 def signup_process(request):
     global user
     if request.user.is_authenticated:
@@ -58,6 +59,7 @@ def signup_process(request):
         else:
             context = {'error_message': 'Girdiğiniz şifre bilgisi yanlıştır. Lütfen şifrenizi kontrol ediniz.'}
             return render(request, 'aero_lease_sign_up.html', context)
+
 
 @login_required
 def app_view(request):
