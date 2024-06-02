@@ -11,3 +11,6 @@
 8. IHAKI-8 Müşteri, iha, kiralama, kategori gibi modelleri oluşturdum. Ayrıca içerde bir konfigrasyon sistemi kurdum. Redis üzerinden ön bellek çalışıyor.
 9. IHAKI-9 Redis önbellek temizleme komutu oluşturdum. Varlıkların ilk migrationunu gerçekleştirdim.
 10. IHAKI-10 Üye kayıt sistemi tamamlandı. Redis önbellek mekanizmasında eksikler giderildi. 
+
+# Relase 0.3.0
+11. IHAKI-11 Kategori, İHA, Kira ekleme ve listeleme form şablonlarını oluşturdum.

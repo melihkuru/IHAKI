@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
@@ -36,3 +36,7 @@ def login_process(request):
 @login_required
 def app_view(request):
     return render(request, 'aero_admin_app.html')
+@login_required
+def logout_process(request):
+    logout(request)
+    return redirect("/AeroAdmin/Login")

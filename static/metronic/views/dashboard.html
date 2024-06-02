@@ -1,110 +1,115 @@
 <!-- BEGIN PAGE HEADER-->
 <h3 class="page-title">
-	Ana Sayfa
+    Ana Sayfa
 </h3>
 <div class="page-bar">
-	<ul class="page-breadcrumb">
-		<li>
-			<i class="fa fa-home"></i>
-			<a href="index.html">Kiralama Yönetim Sistemi</a>
-			<i class="fa fa-angle-right"></i>
-		</li>
-		<li>
-			<a href="#">Ana Sayfa</a>
-		</li>
-	</ul>
-	<div class="page-toolbar">
-	</div>
+    <ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="#">Kiralama Yönetim Sistemi</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#">Ana Sayfa</a>
+        </li>
+    </ul>
+    <div class="page-toolbar">
+    </div>
 </div>
 <!-- END PAGE HEADER-->
 <!-- BEGIN MAIN CONTENT -->
 <div ng-controller="DashboardController">
-	<div class="note note-success note-bordered">
-		<h3>Duyuru <span class="close" data-close="note"></span></h3>
-		<p>
-			Yeni İHALARIMIZ Göreve Başladı.
-		</p>
-	</div>
-	<!-- BEGIN DASHBOARD STATS -->
-	<div class="row">
-		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-			<div class="dashboard-stat blue-madison">
-				<div class="visual">
-					<i class="fa fa-comments"></i>
-				</div>
-				<div class="details">
-					<div class="number">
-						1349
-					</div>
-					<div class="desc">
-						Kayıtlı İHA Sayısı
-					</div>
-				</div>
-				<a class="more" href="#">
-				Yeni Ekle <i class="m-icon-swapright m-icon-white"></i>
-				</a>
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-			<div class="dashboard-stat red-intense">
-				<div class="visual">
-					<i class="fa fa-bar-chart-o"></i>
-				</div>
-				<div class="details">
-					<div class="number">
-						12,5M$
-					</div>
-					<div class="desc">
-						Anlık Kiralı İHA Sayısı
-					</div>
-				</div>
-				<a class="more" href="#">
-				Kira Listesi <i class="m-icon-swapright m-icon-white"></i>
-				</a>
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-			<div class="dashboard-stat green-haze">
-				<div class="visual">
-					<i class="fa fa-shopping-cart"></i>
-				</div>
-				<div class="details">
-					<div class="number">
-						549
-					</div>
-					<div class="desc">
-						Müşteri Sayısı
-					</div>
-				</div>
-				<a class="more" href="#">
-				Müşteri Listesi <i class="m-icon-swapright m-icon-white"></i>
-				</a>
-			</div>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-			<div class="dashboard-stat purple-plum">
-				<div class="visual">
-					<i class="fa fa-globe"></i>
-				</div>
-				<div class="details">
-					<div class="number">
-						+89%
-					</div>
-					<div class="desc">
-						Aylık Ortalama İHA Kira Oranı
-					</div>
-				</div>
-				<a class="more" href="#">
-				Kiralama Yap <i class="m-icon-swapright m-icon-white"></i>
-				</a>
-			</div>
-		</div>
-	</div>
+    <div class="note note-success note-bordered">
+        <h3>Duyuru <span class="close" data-close="note"></span></h3>
+        <p>
+            Manevra testleri için gökyüzünde seyir halinde bulunan Bayraktar TB2, sarmal bir yörünge izleyerek ve kendi
+            ekseni etrafında tam tur dönerek icra ettiği bu manevra ile dünya havacılık tarihine bir kez daha adını
+            yazdırdı. Bu manevrayı başarıyla yapabilen ilk ve tek SİHA olan Bayraktar TB2, otonomi ve aerodinamik
+            kabiliyetlerinin ne kadar gelişmiş olduğunu da bir kez daha gösterdi. Bayraktar TB2’nin tarihi anlarını ise
+            test faaliyetlerini sürdüren bir başka Bayraktar TB2 ve Konya’daki mühimmat atış testinden dönen Bayraktar
+            AKINCI TİHA kayıt altına aldı.
+        </p>
+    </div>
+    <!-- BEGIN DASHBOARD STATS -->
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat blue-madison">
+                <div class="visual">
+                    <i class="fa fa-comments"></i>
+                </div>
+                <div class="details">
+                    <div class="number">
+                        1349
+                    </div>
+                    <div class="desc">
+                        Kayıtlı İHA Sayısı
+                    </div>
+                </div>
+                <a class="more" href="#/uav/add">
+                    Yeni Ekle <i class="m-icon-swapright m-icon-white"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat red-intense">
+                <div class="visual">
+                    <i class="fa fa-bar-chart-o"></i>
+                </div>
+                <div class="details">
+                    <div class="number">
+                        1349
+                    </div>
+                    <div class="desc">
+                        Anlık Kiralı İHA Sayısı
+                    </div>
+                </div>
+                <a class="more" href="#/lease/list">
+                    Kira Listesi <i class="m-icon-swapright m-icon-white"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat green-haze">
+                <div class="visual">
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+                <div class="details">
+                    <div class="number">
+                        549
+                    </div>
+                    <div class="desc">
+                        Müşteri Sayısı
+                    </div>
+                </div>
+                <a class="more" href="#/customer/list">
+                    Müşteri Listesi <i class="m-icon-swapright m-icon-white"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="dashboard-stat purple-plum">
+                <div class="visual">
+                    <i class="fa fa-globe"></i>
+                </div>
+                <div class="details">
+                    <div class="number">
+                        89%
+                    </div>
+                    <div class="desc">
+                        Aylık Ortalama İHA Kira Oranı
+                    </div>
+                </div>
+                <a class="more" href="#/lease/create">
+                    Kiralama Yap <i class="m-icon-swapright m-icon-white"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- END MAIN CONTENT -->
 <!-- BEGIN MAIN JS & CSS -->
 <script>
-	Index.init();    
-	Tasks.initDashboardWidget();
+    Index.init();
+    Tasks.initDashboardWidget();
 </script>
 <!-- BEGIN MAIN JS & CSS -->

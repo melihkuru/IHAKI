@@ -1,180 +1,103 @@
 <!-- BEGIN HEADER INNER -->
 <div class="page-header-inner container">
-	<!-- BEGIN LOGO -->
-	<div class="page-logo">
-		<a href="#/dashboard.html">
-		<img src="/static/metronic/global/img/akinci.png" alt="logo" class="logo-default h-5px"/>
-		</a>
-		<div class="menu-toggler sidebar-toggler">
-			<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
-		</div>
-	</div>
-	<!-- END LOGO -->
-	<!-- BEGIN RESPONSIVE MENU TOGGLER -->
-	<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
-	</a>
-	<!-- END RESPONSIVE MENU TOGGLER -->
-	<!-- BEGIN PAGE ACTIONS -->
-	<!-- DOC: Remove "hide" class to enable the page header actions -->
-	<div class="page-actions">
-	</div>
-	<!-- END PAGE ACTIONS -->
-	<!-- BEGIN PAGE TOP -->
-	<div class="page-top">
-		<!-- BEGIN HEADER SEARCH BOX -->
-		<!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
-		<form class="search-form search-form-expanded" action="#" method="GET">
-			<div class="input-group">
-				<input type="text" class="form-control" placeholder="İHA Ara..." name="query">
-				<span class="input-group-btn">
+    <!-- BEGIN LOGO -->
+    <div class="page-logo">
+        <a href="#/dashboard">
+            <img src="/static/metronic/global/img/IHA.png" alt="logo" class="logo-default"
+                 style="height: 50px;border-radius: 10px"/>
+        </a>
+        <div class="menu-toggler sidebar-toggler">
+            <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+        </div>
+    </div>
+    <!-- END LOGO -->
+    <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+    <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
+       data-target=".navbar-collapse">
+    </a>
+    <!-- END RESPONSIVE MENU TOGGLER -->
+    <!-- BEGIN PAGE ACTIONS -->
+    <!-- DOC: Remove "hide" class to enable the page header actions -->
+    <div class="page-actions">
+    </div>
+    <!-- END PAGE ACTIONS -->
+    <!-- BEGIN PAGE TOP -->
+    <div class="page-top">
+        <!-- BEGIN HEADER SEARCH BOX -->
+        <!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
+        <form class="search-form search-form-expanded" action="#" method="GET">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="İHA Ara..." name="query">
+                <span class="input-group-btn">
 				<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
 				</span>
-			</div>
-		</form>
-		<!-- END HEADER SEARCH BOX -->
-		<!-- BEGIN TOP NAVIGATION MENU -->
-		<div class="top-menu">
-			<ul class="nav navbar-nav pull-right">
-				<!-- BEGIN NOTIFICATION DROPDOWN -->
-				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-				<li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
-					<a href="#" class="dropdown-toggle" dropdown-menu-hover data-toggle="dropdown" data-close-others="true">
-					<i class="icon-bell"></i>
-					<span class="badge badge-default">
-					7 </span>
-					</a>
-					<ul class="dropdown-menu">
-						<li class="external">
-							<h3><span class="bold">12 pending</span> notifications</h3>
-							<a href="#/profile/dashboard">view all</a>
-						</li>
-						<li>
-							<ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
-								<li>
-									<a href="javascript:;">
-									<span class="time">just now</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-success">
-									<i class="fa fa-plus"></i>
-									</span>
-									New user registered. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">3 mins</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									Server #12 overloaded. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">10 mins</span>
-									<span class="details">
+            </div>
+        </form>
+        <!-- END HEADER SEARCH BOX -->
+        <!-- BEGIN TOP NAVIGATION MENU -->
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+                <!-- BEGIN NOTIFICATION DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-extended dropdown-notification" id="header_notification_bar">
+                    <a href="#" class="dropdown-toggle" dropdown-menu-hover data-toggle="dropdown"
+                       data-close-others="true">
+                        <i class="icon-bell"></i>
+                        <span class="badge badge-default">
+					1 </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="external">
+                            <h3>Bu gün <span class="bold">1</span> İHA kira süresi bitiyor.</h3>
+                        </li>
+                        <li>
+                            <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="time">15:00</span>
+                                        <span class="details">
 									<span class="label label-sm label-icon label-warning">
 									<i class="fa fa-bell-o"></i>
 									</span>
-									Server #2 not responding. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">14 hrs</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-info">
-									<i class="fa fa-bullhorn"></i>
-									</span>
-									Application error. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">2 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									Database overloaded 68%. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">3 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									A user IP blocked. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">4 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-warning">
-									<i class="fa fa-bell-o"></i>
-									</span>
-									Storage Server #4 not responding dfdfdfd. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">5 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-info">
-									<i class="fa fa-bullhorn"></i>
-									</span>
-									System Error. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">9 days</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									Storage server failed. </span>
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<!-- END NOTIFICATION DROPDOWN -->
-				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-				<li class="dropdown dropdown-user">
-					<a href="#" class="dropdown-toggle" dropdown-menu-hover data-toggle="dropdown" data-close-others="true">
-					<img alt="" class="img-circle" src="/static/metronic/admin/layout2/img/profile.jpeg"/>
-					<span class="username username-hide-on-mobile">
+									#Akinci2 Kira Süresi Sonu</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END NOTIFICATION DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-user">
+                    <a href="#" class="dropdown-toggle" dropdown-menu-hover data-toggle="dropdown"
+                       data-close-others="true">
+                        <img alt="" class="img-circle" src="/static/metronic/admin/layout2/img/profile.jpeg"/>
+                        <span class="username username-hide-on-mobile">
 					{{ name}} </span>
-					<i class="fa fa-angle-down"></i>
-					</a>
-					<ul class="dropdown-menu dropdown-menu-default">
-						<li>
-							<a href="#/profile/dashboard">
-							<i class="icon-user"></i> Profilim </a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="icon-calendar"></i> Kira Takvimi </a>
-						</li>
-						<li class="divider">
-						</li>
-						<li>
-							<a href="#">
-							<i class="icon-key"></i> Çıkış Yap </a>
-						</li>
-					</ul>
-				</li>
-				<!-- END USER LOGIN DROPDOWN -->
-			</ul>
-		</div>
-		<!-- END TOP NAVIGATION MENU -->
-	</div>
-	<!-- END PAGE TOP -->
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default">
+                        <li>
+                            <a href="#/settings">
+                                <i class="icon-settings"></i> Ayarlar </a>
+                        </li>
+                        <li>
+                            <a href="#/lease/list">
+                                <i class="icon-calendar"></i> Kira Takvimi </a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="/AeroAdmin/Logout">
+                                <i class="icon-key"></i> Çıkış Yap </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END USER LOGIN DROPDOWN -->
+            </ul>
+        </div>
+        <!-- END TOP NAVIGATION MENU -->
+    </div>
+    <!-- END PAGE TOP -->
 </div>
 <!-- END HEADER INNER -->
