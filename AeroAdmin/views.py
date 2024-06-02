@@ -15,8 +15,8 @@ def login_process(request):
         return render(request, 'aero_admin_login.html', {'context': context})
 
     if request.method == 'POST':
-        email = request.POST.get('email', '')
-        password = request.POST.get('password', '')
+        email = request.POST.get('email', '').strip()
+        password = request.POST.get('password', '').strip()
         try:
             user = User.objects.get(email=email)
         except ObjectDoesNotExist:

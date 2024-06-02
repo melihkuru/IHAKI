@@ -57,6 +57,23 @@ License: For each use you must have a valid license purchased only from above li
             <!--begin::Wrapper-->
             <div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
                 <!--begin::Form-->
+                {% if success_message %}
+                <div class="alert alert-dismissible bg-light-success border border-success d-flex flex-column flex-sm-row p-5 mb-10">
+                    <!--begin::Icon-->
+                    <span class="svg-icon svg-icon-2hx svg-icon-danger me-4 mb-5 mb-sm-0">!</span>
+                    <!--end::Icon-->
+                    <!--begin::Wrapper-->
+                    <div class="d-flex flex-column pe-0 pe-sm-10">
+                        <!--begin::Title-->
+                        <h5 class="mb-1">Başarılı</h5>
+                        <!--end::Title-->
+                        <!--begin::Content-->
+                        <span>{{ success_message }}</span>
+                        <!--end::Content-->
+                    </div>
+                    <!--end::Wrapper-->
+                </div>
+                {% endif %}
                 <form class="form w-100" id="kt_sign_in_form" action="{% url 'aero_lease_login' %}" method="post">
                     {% csrf_token %}
                     <!--begin::Heading-->
@@ -135,8 +152,10 @@ License: For each use you must have a valid license purchased only from above li
         <div class="d-flex flex-center flex-column-auto p-10">
             <!--begin::Links-->
             <div class="d-flex align-items-center fw-bold fs-6">
-                <a target="_blank" href="https://baykartech.com/tr/" class="text-muted text-hover-primary px-2">Baykar</a>
-                <a target="_blank" href="https://keenthemes.com/" class="text-muted text-hover-primary px-2">Metronik</a>
+                <a target="_blank" href="https://baykartech.com/tr/"
+                   class="text-muted text-hover-primary px-2">Baykar</a>
+                <a target="_blank" href="https://keenthemes.com/"
+                   class="text-muted text-hover-primary px-2">Metronik</a>
                 <a target="_blank" href="https://github.com/melihkuru/IHAKI" class="text-muted text-hover-primary px-2">Github</a>
             </div>
             <!--end::Links-->
