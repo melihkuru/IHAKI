@@ -37,13 +37,13 @@
             </div>
             <div class="portlet-body form">
                 <!-- BEGIN FORM-->
-                <form action="#" id="form-username" class="form-horizontal form-bordered">
+                <form method="POST" id="form-username" class="form-horizontal form-bordered" ng-submit="submitForm()">
                     <div class="form-body">
                         <div class="form-group">
                             <label class="control-label col-md-3">Kategori İsmi</label>
                             <div class="col-md-4">
                                 <div class="input-icon right">
-                                    <input type="text" class="form-control" name="username1" id="username1_input" placeholder="İsim">
+                                    <input type="text" required="required" class="form-control" name="catname" id="username1_input" placeholder="İsim" ng-model="formData.name">
                                 </div>
                                 <div class="help-block">
                                     Kategori isminin benzersiz olması gerekmektedir.
@@ -53,19 +53,11 @@
 						<div class="form-group">
 							<label class="control-label col-md-3">Kategori Açıklama</label>
 							<div class="col-md-9">
-								<textarea id="maxlength_textarea" class="form-control" maxlength="500" rows="2" placeholder="Açıklama"></textarea>
+								<textarea required="required" id="maxlength_textarea" class="form-control" maxlength="500" rows="2" ng-model="formData.description" placeholder="Açıklama"></textarea>
 								<span class="help-block">
 								Kategoriniz hakkında 500 karaktere kadar açıklamayı buraya girebilirsiniz. </span>
 							</div>
 						</div>
-                        <div class="form-group">
-                            <label class="control-label col-md-3">Kategori Kiralaması Durumu</label>
-                            <div class="col-md-9">
-                                <input type="checkbox" checked class="make-switch" data-size="normal">
-								<span class="help-block">
-								Bu kategori altındaki İHA'ların kiralama aktiflik seçeneği. </span>
-                            </div>
-                        </div>
                     </div>
                     <div class="form-actions">
                         <div class="row">

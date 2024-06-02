@@ -13,7 +13,7 @@ var Metronic = function() {
 
     var assetsPath = '../../assets/';
 
-    var globalImgPath = 'global/img/';
+    var globalImgPath = 'metronic/global/img/';
 
     var globalPluginsPath = 'global/plugins/';
 

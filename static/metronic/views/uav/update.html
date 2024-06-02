@@ -39,33 +39,95 @@
             </div>
             <div class="portlet-body form">
                 <!-- BEGIN FORM-->
-                <form action="#" id="form-username" class="form-horizontal form-bordered">
+                <form method="POST" id="form-username" class="form-horizontal form-bordered" ng-submit="submitForm()">
                     <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">İHA Kategori</label>
+                            <div class="col-md-4">
+                                <select class="form-control" required="required" name="category" id="category"
+                                        ng-model="formData.category">
+                                    <option value="" selected disabled>Kategori Seçin</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label class="control-label col-md-3">İHA İsmi</label>
                             <div class="col-md-4">
                                 <div class="input-icon right">
-                                    <input type="text" class="form-control" name="username1" id="username1_input" placeholder="İsim">
+                                    <input type="text" required="required" class="form-control" name="name" id="name"
+                                           placeholder="İsim" ng-model="formData.name">
                                 </div>
                                 <div class="help-block">
                                     İHA isminin benzersiz olması gerekmektedir.
                                 </div>
                             </div>
                         </div>
-						<div class="form-group">
-							<label class="control-label col-md-3">İHA Açıklama</label>
-							<div class="col-md-9">
-								<textarea id="maxlength_textarea" class="form-control" maxlength="500" rows="2" placeholder="Açıklama"></textarea>
-								<span class="help-block">
-								İHAniz hakkında 500 karaktere kadar açıklamayı buraya girebilirsiniz. </span>
-							</div>
-						</div>
                         <div class="form-group">
-                            <label class="control-label col-md-3">İHA Kiralaması Durumu</label>
-                            <div class="col-md-9">
-                                <input type="checkbox" checked class="make-switch" data-size="normal">
-								<span class="help-block">
-								Bu İHA altındaki İHA'ların kiralama aktiflik seçeneği. </span>
+                            <label class="control-label col-md-3">İHA Kod Adı</label>
+                            <div class="col-md-4">
+                                <div class="input-icon right">
+                                    <input type="text" class="form-control" required="required" name="code" id="code"
+                                           placeholder="Kod Adı" ng-model="formData.code">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">İHA Envanter Numarası</label>
+                            <div class="col-md-4">
+                                <div class="input-icon right">
+                                    <input type="text" required="required" class="form-control" name="stocknumber"
+                                           id="stocknumber"
+                                           placeholder="Stok Kodu" ng-model="formData.stock">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Marka</label>
+                            <div class="col-md-4">
+                                <div class="input-icon right">
+                                    <input type="text" class="form-control" name="brand" id="brand" placeholder="BAYKAR"
+                                           value="BAYKAR" disabled ng-model="formData.brand">
+                                </div>
+                                <div class="help-block">
+                                    Yalnızca BAYKAR markası altındaki İHA'lar için kayıt ekleyebilirsiniz.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Model</label>
+                            <div class="col-md-4">
+                                <div class="input-icon right">
+                                    <input type="text" required="required" class="form-control" name="mode" id="model"
+                                           placeholder="Model" ng-model="formData.model">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Ağırlık</label>
+                            <div class="col-md-4">
+                                <div class="input-icon right">
+                                    <input type="number" class="form-control" name="weight" id="weight"
+                                           required="required" placeholder="Ağırlık" ng-model="formData.weight">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Azami Kalkış Ağırlığı</label>
+                            <div class="col-md-4">
+                                <div class="input-icon right">
+                                    <input type="number" class="form-control" name="username1" id="username1_input"
+                                           required="required" placeholder="Azami Kalkış"
+                                           ng-model="formData.takeoff_weight">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Uçuş Menzili</label>
+                            <div class="col-md-4">
+                                <div class="input-icon right">
+                                    <input type="number" class="form-control" name="range" id="flight_range"
+                                           placeholder="Uçuş Menzili" ng-model="formData.flight_range">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -73,7 +135,9 @@
                         <div class="row">
                             <div class="col-md-offset-3 col-md-9">
                                 <button type="submit" class="btn blue"><i class="fa fa-check"></i> Güncelle</button>
-                                <button type="button" class="btn default">Sil</button>
+                                <button type="button" class="btn red" ng-click="deleteUav()"><i class="fa fa-trash"></i>
+                                    Sil
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -84,6 +148,7 @@
         <!-- END PORTLET-->
     </div>
 </div>
+<!-- END MAIN CONTENT -->
 <!-- END MAIN CONTENT -->
 <script>
     ComponentsFormTools.init(); // init todo page

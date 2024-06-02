@@ -1,5 +1,3 @@
-
-
 var TableAdvanced = function () {
 
     var initTable1 = function () {

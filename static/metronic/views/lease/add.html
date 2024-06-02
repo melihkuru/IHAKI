@@ -1,6 +1,6 @@
 <!-- BEGIN PAGE HEADER-->
 <h3 class="page-title">
-    Kira Oluştur
+    Kiralama Ekle
 </h3>
 <div class="page-bar">
     <ul class="page-breadcrumb">
@@ -10,11 +10,11 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="#/lease/list">Kira</a>
+            <a href="#/lease/list">Kiralama</a>
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="#/lease/create">Ekle</a>
+            <a href="#/lease/add">Ekle</a>
         </li>
     </ul>
 </div>
@@ -26,7 +26,7 @@
         <div class="portlet box blue-hoki">
             <div class="portlet-title">
                 <div class="caption">
-                    <i class="fa fa-save"></i>Kira Oluştur
+                    <i class="fa fa-save"></i>Kiralama Ekle
                 </div>
                 <div class="tools">
                     <a href="javascript:;" class="collapse">
@@ -37,38 +37,42 @@
             </div>
             <div class="portlet-body form">
                 <!-- BEGIN FORM-->
-                <form action="#" id="form-username" class="form-horizontal form-bordered">
+                <form method="POST" id="form-lease" class="form-horizontal form-bordered" ng-submit="submitForm()">
                     <div class="form-body">
-                        <div class="form-group">
-                            <label class="control-label col-md-3">Kiralanan İHA</label>
-                            <div class="col-md-4">
-                                <div class="input-icon right">
-                                    <input type="text" class="form-control" name="username1" id="username1_input" placeholder="İsim">
-                                </div>
-                            </div>
-                        </div>
                         <div class="form-group">
                             <label class="control-label col-md-3">Kiralayan Firma</label>
                             <div class="col-md-4">
-                                <div class="input-icon right">
-                                    <input type="text" class="form-control" name="username1" id="username1_input" placeholder="İsim">
-                                </div>
+                                <select class="form-control" required="required" name="customer" id="customer"
+                                        ng-model="formData.customer">
+                                    <option value="" selected disabled>Firma Seçiniz</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3">Başlangıç Tarihi</label>
+                            <label class="control-label col-md-3">İHA Seçiniz</label>
                             <div class="col-md-4">
-                                <div class="input-icon right">
-                                    <input type="text" class="form-control" name="username1" id="username1_input" placeholder="İsim">
-                                </div>
+                                <select class="form-control" required="required" name="uav" id="uav"
+                                        ng-model="formData.uav">
+                                    <option value="" selected disabled>İHA Seçiniz</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3">Bitiş Tarihi</label>
+                            <label class="control-label col-md-3">Kiralama Başlangıç Tarihi</label>
                             <div class="col-md-4">
-                                <div class="input-icon right">
-                                    <input type="text" class="form-control" name="username1" id="username1_input" placeholder="İsim">
-                                </div>
+                                <input type="date" required="required" class="form-control" name="lease_start"
+                                       ng-model="formData.lease_start">
+                                <input type="time" required="required" class="form-control" name="lease_start_time"
+                                       ng-model="formData.lease_start_time">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Kiralama Bitiş Tarihi</label>
+                            <div class="col-md-4">
+                                <input type="date" required="required" class="form-control" name="lease_end"
+                                       ng-model="formData.lease_end">
+                                <input type="time" required="required" class="form-control" name="lease_end_time"
+                                       ng-model="formData.lease_end_time">
                             </div>
                         </div>
                     </div>
@@ -76,7 +80,7 @@
                         <div class="row">
                             <div class="col-md-offset-3 col-md-9">
                                 <button type="submit" class="btn blue"><i class="fa fa-check"></i> Ekle</button>
-                                <button type="button" class="btn default">İptal</button>
+                                <button type="reset" class="btn default">Temizle</button>
                             </div>
                         </div>
                     </div>
@@ -88,6 +92,3 @@
     </div>
 </div>
 <!-- END MAIN CONTENT -->
-<script>
-    ComponentsFormTools.init(); // init todo page
-</script>

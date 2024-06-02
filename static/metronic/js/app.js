@@ -184,9 +184,11 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                             '/static/metronic/global/plugins/datatables/all.min.js',
 
                             '/static/metronic/global/scripts/datatable.js',
-                            '/static/metronic/js/scripts/table-ajax.js',
+                            '/static/metronic/js/scripts/category-table.js',
 
-                            '/static/metronic/js/controllers/GeneralPageController.js'
+                            '/static/metronic/js/controllers/GeneralPageController.js',
+                            'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js',
+                            'https://cdn.jsdelivr.net/npm/sweetalert2@11',
                         ]
                     });
                 }]
@@ -198,7 +200,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
             url: "/category/add",
             templateUrl: "/static/metronic/views/category/add.html",
             data: {pageTitle: 'İHA Kiralama Kategori Ekleme'},
-            controller: "GeneralPageController",
+            controller: "CategoryAddController",
             resolve: {
                 deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({
@@ -224,7 +226,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                             '/static/metronic/global/plugins/typeahead/typeahead.bundle.min.js',
                             '/static/metronic/admin/pages/scripts/components-form-tools.js',
 
-                            '/static/metronic/js/controllers/GeneralPageController.js'
+                            '/static/metronic/js/controllers/CategoryAddController.js',
+                            'https://cdn.jsdelivr.net/npm/sweetalert2@11',
                         ]
                     });
                 }]
@@ -236,7 +239,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
             url: "/category/:categoryId",
             templateUrl: "/static/metronic/views/category/update.html",
             data: {pageTitle: 'İHA Kiralama Kategori Detay'},
-            controller: "GeneralPageController",
+            controller: "CategoryUpdateController",
             resolve: {
                 deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({
@@ -262,7 +265,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                             '/static/metronic/global/plugins/typeahead/typeahead.bundle.min.js',
                             '/static/metronic/admin/pages/scripts/components-form-tools.js',
 
-                            '/static/metronic/js/controllers/GeneralPageController.js'
+                            '/static/metronic/js/controllers/CategoryUpdateController.js',
+                            'https://cdn.jsdelivr.net/npm/sweetalert2@11',
                         ]
                     });
                 }]
@@ -291,7 +295,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                             '/static/metronic/global/plugins/datatables/all.min.js',
 
                             '/static/metronic/global/scripts/datatable.js',
-                            '/static/metronic/js/scripts/table-ajax.js',
+                            '/static/metronic/js/scripts/uav-table.js',
+                            'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js',
 
                             '/static/metronic/js/controllers/GeneralPageController.js'
                         ]
@@ -305,7 +310,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
             url: "/uav/add",
             templateUrl: "/static/metronic/views/uav/add.html",
             data: {pageTitle: 'İHA Ekleme'},
-            controller: "GeneralPageController",
+            controller: "UavAddController",
             resolve: {
                 deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({
@@ -331,7 +336,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                             '/static/metronic/global/plugins/typeahead/typeahead.bundle.min.js',
                             '/static/metronic/admin/pages/scripts/components-form-tools.js',
 
-                            '/static/metronic/js/controllers/GeneralPageController.js'
+                            'https://cdn.jsdelivr.net/npm/sweetalert2@11',
+                            '/static/metronic/js/controllers/UavAddController.js'
                         ]
                     });
                 }]
@@ -341,9 +347,9 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
         // UAV Düzenle (Sonda olması önemli list ve add akışı etkilenmesin)
         .state('uav', {
             url: "/uav/:uavId",
-            templateUrl: "/static/metronic/views/category/update.html",
+            templateUrl: "/static/metronic/views/uav/update.html",
             data: {pageTitle: 'İHA Detay'},
-            controller: "GeneralPageController",
+            controller: "UavUpdateController",
             resolve: {
                 deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({
@@ -369,7 +375,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                             '/static/metronic/global/plugins/typeahead/typeahead.bundle.min.js',
                             '/static/metronic/admin/pages/scripts/components-form-tools.js',
 
-                            '/static/metronic/js/controllers/GeneralPageController.js'
+                            '/static/metronic/js/controllers/UavUpdateController.js',
+                            'https://cdn.jsdelivr.net/npm/sweetalert2@11',
                         ]
                     });
                 }]
@@ -398,39 +405,10 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                             '/static/metronic/global/plugins/datatables/all.min.js',
 
                             '/static/metronic/global/scripts/datatable.js',
-                            '/static/metronic/js/scripts/table-ajax.js',
+                            'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js',
 
-                            '/static/metronic/js/controllers/GeneralPageController.js'
-                        ]
-                    });
-                }]
-            }
-        })
-
-        // Lease Cancel List
-        .state('leaseCancellist', {
-            url: "/lease/cancel/list",
-            templateUrl: "/static/metronic/views/lease/cancel_request_list.html",
-            data: {pageTitle: 'İHA Kiralama İptal Listesi'},
-            controller: "GeneralPageController",
-            resolve: {
-                deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: 'MetronicApp',
-                        insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
-                        files: [
-                            '/static/metronic/global/plugins/select2/select2.css',
-                            '/static/metronic/global/plugins/bootstrap-datepicker/css/datepicker.css',
-                            '/static/metronic/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
-
-                            '/static/metronic/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js',
-                            '/static/metronic/global/plugins/select2/select2.min.js',
-                            '/static/metronic/global/plugins/datatables/all.min.js',
-
-                            '/static/metronic/global/scripts/datatable.js',
-                            '/static/metronic/js/scripts/table-ajax.js',
-
-                            '/static/metronic/js/controllers/GeneralPageController.js'
+                            '/static/metronic/js/controllers/GeneralPageController.js',
+                            '/static/metronic/js/scripts/lease-table.js',
                         ]
                     });
                 }]
@@ -442,7 +420,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
             url: "/lease/create",
             templateUrl: "/static/metronic/views/lease/add.html",
             data: {pageTitle: 'İHA Kiralama Oluştur'},
-            controller: "GeneralPageController",
+            controller: "LeaseAddController",
             resolve: {
                 deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({
@@ -467,20 +445,22 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                             '/static/metronic/global/plugins/typeahead/handlebars.min.js',
                             '/static/metronic/global/plugins/typeahead/typeahead.bundle.min.js',
                             '/static/metronic/admin/pages/scripts/components-form-tools.js',
+                            'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js',
 
-                            '/static/metronic/js/controllers/GeneralPageController.js'
+                            '/static/metronic/js/controllers/LeaseAddController.js',
+                            'https://cdn.jsdelivr.net/npm/sweetalert2@11',
                         ]
                     });
                 }]
             }
         })
 
-        // Kategori Düzenle (Sonda olması önemli list ve add akışı etkilenmesin)
+        // Lease Düzenle (Sonda olması önemli list ve add akışı etkilenmesin)
         .state('lease', {
             url: "/lease/:leaseId",
             templateUrl: "/static/metronic/views/lease/update.html",
             data: {pageTitle: 'İHA Kiralama Detay'},
-            controller: "GeneralPageController",
+            controller: "LeaseUpdateController",
             resolve: {
                 deps: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({
@@ -506,7 +486,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                             '/static/metronic/global/plugins/typeahead/typeahead.bundle.min.js',
                             '/static/metronic/admin/pages/scripts/components-form-tools.js',
 
-                            '/static/metronic/js/controllers/GeneralPageController.js'
+                            '/static/metronic/js/controllers/LeaseUpdateController.js',
+                            'https://cdn.jsdelivr.net/npm/sweetalert2@11',
                         ]
                     });
                 }]
@@ -532,9 +513,11 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                             '/static/metronic/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js',
                             '/static/metronic/global/plugins/select2/select2.min.js',
                             '/static/metronic/global/plugins/datatables/all.min.js',
+                            '/static/metronic/global/plugins/datatables/all.min.js',
 
                             '/static/metronic/global/scripts/datatable.js',
-                            '/static/metronic/js/scripts/table-ajax.js',
+                            '/static/metronic/js/scripts/customer-table.js',
+                            'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js',
 
                             '/static/metronic/js/controllers/GeneralPageController.js'
                         ]
@@ -546,8 +529,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
         // Sistem ayarları
         .state('settings', {
             url: "/settings",
-            templateUrl: "/static/metronic/views/settings/update.html",
-            data: {pageTitle: 'İHA Kiralama Ayarlar'},
+            templateUrl: "/static/metronic/views/settings/list.html",
+            data: {pageTitle: 'İHA Kiralama Ayar'},
             controller: "GeneralPageController",
             resolve: {
                 deps: ['$ocLazyLoad', function ($ocLazyLoad) {
@@ -555,24 +538,18 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
                         name: 'MetronicApp',
                         insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                         files: [
-                            '/static/metronic/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css',
-                            '/static/metronic/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css',
-                            '/static/metronic/global/plugins/jquery-tags-input/jquery.tagsinput.css',
-                            '/static/metronic/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css',
-                            '/static/metronic/global/plugins/typeahead/typeahead.css',
+                            '/static/metronic/global/plugins/select2/select2.css',
+                            '/static/metronic/global/plugins/bootstrap-datepicker/css/datepicker.css',
+                            '/static/metronic/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
 
-                            '/static/metronic/global/plugins/fuelux/js/spinner.min.js',
-                            '/static/metronic/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js',
-                            '/static/metronic/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js',
-                            '/static/metronic/global/plugins/jquery.input-ip-address-control-1.0.min.js',
-                            '/static/metronic/global/plugins/bootstrap-pwstrength/pwstrength-bootstrap.min.js',
-                            '/static/metronic/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js',
-                            '/static/metronic/global/plugins/jquery-tags-input/jquery.tagsinput.min.js',
-                            '/static/metronic/global/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js',
-                            '/static/metronic/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js',
-                            '/static/metronic/global/plugins/typeahead/handlebars.min.js',
-                            '/static/metronic/global/plugins/typeahead/typeahead.bundle.min.js',
-                            '/static/metronic/admin/pages/scripts/components-form-tools.js',
+                            '/static/metronic/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js',
+                            '/static/metronic/global/plugins/select2/select2.min.js',
+                            '/static/metronic/global/plugins/datatables/all.min.js',
+                            '/static/metronic/global/plugins/datatables/all.min.js',
+
+                            '/static/metronic/global/scripts/datatable.js',
+                            '/static/metronic/js/scripts/settings-table.js',
+                            'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js',
 
                             '/static/metronic/js/controllers/GeneralPageController.js'
                         ]
@@ -587,3 +564,34 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProv
 MetronicApp.run(["$rootScope", "settings", "$state", function ($rootScope, settings, $state) {
     $rootScope.$state = $state; // state to be accessed from view
 }]);
+
+function getCSRFToken() {
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.startsWith('csrftoken=')) {
+            return cookie.substring('csrftoken='.length, cookie.length);
+        }
+    }
+    return null; // CSRF token bulunamadı
+}
+
+function formatErrorMessage(errorData) {
+    if (!errorData || typeof errorData !== 'object') {
+        return 'Bilinmeyen bir hata oluştu.';
+    }
+
+    let errorMessage = '';
+    for (let key in errorData) {
+        if (errorData.hasOwnProperty(key)) {
+            errorMessage += `${key}: ${errorData[key]}, `;
+        }
+    }
+
+    // Remove the last comma and space
+    if (errorMessage.length > 0) {
+        errorMessage = errorMessage.slice(0, -2);
+    }
+
+    return errorMessage;
+}
