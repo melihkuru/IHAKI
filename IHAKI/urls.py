@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.urls import path
+from django.urls import path, include
 
 import AeroAdmin.views
 import AeroLease.views
@@ -32,6 +32,7 @@ urlpatterns = [
     path('AeroLease/', AeroLease.views.app_view),
     path('AeroLease/Login/', AeroLease.views.login_process, name="aero_lease_login"),
     path('AeroLease/SignUp/', AeroLease.views.signup_process, name="aero_lease_sign_up"),
+    path('api/v1/', include('Core.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
