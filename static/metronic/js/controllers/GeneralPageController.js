@@ -1,11 +1,5 @@
-/* Setup general page controller */
-
-MetronicApp.controller('GeneralPageController', ['$rootScope', '$scope', 'settings', function ($rootScope, $scope, settings) {
+MetronicApp.controller('GeneralPageController', ['$rootScope', '$scope', 'settings', '$http', '$location', function ($rootScope, $scope, settings, $http, $location) {
     $scope.$on('$viewContentLoaded', function () {
-        var categoryId = $rootScope.$state.params.categoryId;
-        console.log(categoryId)
-
-        // initialize core components
         Metronic.initAjax();
 
         // set default layout mode

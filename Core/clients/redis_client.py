@@ -102,4 +102,4 @@ class RedisClient:
             return self.execute('setex', key, ttl, value)
 
     def delete(self, key):
-        return self.execute("del", key)
+        return self.execute("delete", key)

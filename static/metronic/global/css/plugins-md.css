@@ -1230,7 +1230,7 @@ Extended pagination
   display: inline-block;
   float: none !important;
   padding: 0 !important;
-  margin: 0 !important;
+  margin: 5px !important;
   position: static !important;
 }
 

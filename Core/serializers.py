@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category, UAV, Lease, Customer
+from .models import Category, UAV, Lease, Customer, Configuration
 
 
 # Delete date, silinmiş gibi sistem içi kullanılan bilgileri API'den exclude ediyorum.
@@ -25,3 +25,16 @@ class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
         exclude = ['is_deleted', 'delete_date']
+
+
+class ConfigurationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Configuration
+        exclude = ['update_date']
+
+
+class StatsSerializer(serializers.Serializer):
+    totalUav = serializers.IntegerField()
+    nowLeasedUav = serializers.IntegerField()
+    totalCustomer = serializers.IntegerField()
+    leaseRatio = serializers.IntegerField()

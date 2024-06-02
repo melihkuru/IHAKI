@@ -42,7 +42,7 @@ var ComponentsFormTools = function () {
           }
         });
  
-        countries.initialize();
+        //countries.initialize();
          
         if (Metronic.isRTL()) {
           $('#typeahead_example_2').attr("dir", "rtl");  
@@ -61,7 +61,7 @@ var ComponentsFormTools = function () {
           remote: 'demo/typeahead_custom.php?query=%QUERY'
         });
          
-        custom.initialize();
+        //custom.initialize();
          
         if (Metronic.isRTL()) {
           $('#typeahead_example_3').attr("dir", "rtl");  
@@ -102,8 +102,8 @@ var ComponentsFormTools = function () {
           prefetch: 'demo/typeahead_nhl.json'
         });
          
-        nba.initialize();
-        nhl.initialize();
+        //nba.initialize();
+        //nhl.initialize();
          
         if (Metronic.isRTL()) {
           $('#typeahead_example_4').attr("dir", "rtl");  
@@ -173,7 +173,7 @@ var ComponentsFormTools = function () {
           }
         });
  
-        countries.initialize();
+        //countries.initialize();
          
         if (Metronic.isRTL()) {
           $('#typeahead_example_modal_2').attr("dir", "rtl");  
@@ -235,8 +235,8 @@ var ComponentsFormTools = function () {
           prefetch: 'demo/typeahead_nhl.json'
         });
          
-        nba.initialize();
-        nhl.initialize();
+        //nba.initialize();
+        //nhl.initialize();
          
         $('#typeahead_example_modal_4').typeahead({
             hint: (Metronic.isRTL() ? false : true),

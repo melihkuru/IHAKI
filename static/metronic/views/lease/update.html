@@ -14,7 +14,7 @@
             <i class="fa fa-angle-right"></i>
         </li>
         <li>
-            <a href="#/lease/add">Ekle</a>
+            <a href="#/lease/list">Düzenle</a>
         </li>
     </ul>
 </div>
@@ -35,43 +35,54 @@
                     </a>
                 </div>
             </div>
-            <div class="portlet-body form">
+            <div class="portlet-body form" disabled="disabled" title="Kira zamanı başlayan kayıtlar için düzenleme yapılmamaktadır.">
                 <!-- BEGIN FORM-->
-                <form action="#" id="form-username" class="form-horizontal form-bordered">
+                <form method="POST" id="form-lease" class="form-horizontal form-bordered">
                     <div class="form-body">
                         <div class="form-group">
-                            <label class="control-label col-md-3">Kira İsmi</label>
-                            <div class="col-md-4">
-                                <div class="input-icon right">
-                                    <input type="text" class="form-control" name="username1" id="username1_input" placeholder="İsim">
-                                </div>
-                                <div class="help-block">
-                                    Kira isminin benzersiz olması gerekmektedir.
-                                </div>
+                            <label class="control-label col-md-3">Kiralayan Firma</label>
+                            <div class="col-md-4" disab>
+                                <select class="form-control" required="required" name="customer" id="customer"
+                                        ng-model="formData.customer">
+                                    <option value="" selected disabled>Firma Seçiniz</option>
+                                </select>
                             </div>
                         </div>
-						<div class="form-group">
-							<label class="control-label col-md-3">Kira Açıklama</label>
-							<div class="col-md-9">
-								<textarea id="maxlength_textarea" class="form-control" maxlength="500" rows="2" placeholder="Açıklama"></textarea>
-								<span class="help-block">
-								Kiraniz hakkında 500 karaktere kadar açıklamayı buraya girebilirsiniz. </span>
-							</div>
-						</div>
                         <div class="form-group">
-                            <label class="control-label col-md-3">Kira Kiralaması Durumu</label>
-                            <div class="col-md-9">
-                                <input type="checkbox" checked class="make-switch" data-size="normal">
-								<span class="help-block">
-								Bu Kira altındaki Kira'ların kiralama aktiflik seçeneği. </span>
+                            <label class="control-label col-md-3">İHA Seçiniz</label>
+                            <div class="col-md-4">
+                                <select class="form-control" required="required" name="uav" id="uav"
+                                        ng-model="formData.uav">
+                                    <option value="" selected disabled>İHA Seçiniz</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Kiralama Başlangıç Tarihi</label>
+                            <div class="col-md-4">
+                                <input type="date" required="required" class="form-control" name="lease_start"
+                                       disabled ng-model="formData.lease_start">
+                                <input type="time" required="required" class="form-control" name="lease_start_time"
+                                       disabled ng-model="formData.lease_start_time">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Kiralama Bitiş Tarihi</label>
+                            <div class="col-md-4">
+                                <input type="date" required="required" class="form-control" name="lease_end"
+                                       ng-model="formData.lease_end">
+                                <input type="time" required="required" class="form-control" name="lease_end_time"
+                                       ng-model="formData.lease_end_time">
                             </div>
                         </div>
                     </div>
                     <div class="form-actions">
                         <div class="row">
                             <div class="col-md-offset-3 col-md-9">
-                                <button type="submit" class="btn blue"><i class="fa fa-check"></i> Ekle</button>
-                                <button type="button" class="btn default">İptal</button>
+                                <button type="submit" class="btn blue" id="update_button"><i class="fa fa-check"></i>
+                                    Güncelle
+                                </button>
+                                <button type="button" class="btn default" id="delete_button">Sil</button>
                             </div>
                         </div>
                     </div>
