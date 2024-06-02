@@ -15,3 +15,4 @@
 # Relase 0.3.0
 11. IHAKI-11 Kategori, İHA, Kira ekleme ve listeleme form şablonlarını oluşturdum.
 12. IHAKI-12 RESTFreamwok ile temel endpointleri oluşturdum. Bazı alanları hariç tutup (silindi gibi), yetkileri ayarladım.
+12. IHAKI-13 Datatable, ajax ile ekleme sistemlerini tamamladım. Varlık düzenleme ve silme sistemi yaptım. Dashboard canlı istatistik getirdim.
