@@ -40,7 +40,7 @@ class Configuration(models.Model):
 
         try:
             config = cls.objects.get(key=key)
-            redis_client.set(env("REDIS_CONFIGURATION_PREFIX") + key, value)
+            redis_client.set(env("REDIS_CONFIGURATION_PREFIX") + key, config.value, env("REDIS_CONFIGURATION_TTL"))
             return config.value
         except cls.DoesNotExist:
             return default

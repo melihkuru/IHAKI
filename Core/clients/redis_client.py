@@ -96,7 +96,10 @@ class RedisClient:
         return self.execute("get", key)
 
     def set(self, key, value, ttl=0):
-        return self.execute("set", key, value, ttl)
+        if ttl == 0:
+            return self.execute("set", key, value, ttl)
+        else:
+            return self.execute('setex', key, ttl, value)
 
     def delete(self, key):
         return self.execute("del", key)
