@@ -37,13 +37,19 @@ BASE_PATH = "" if os.getenv('BASE_PATH') == "/" or os.getenv('BASE_PATH') == "" 
     'BASE_PATH') is None else os.getenv('BASE_PATH')[1:] + '/'
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+]
+
+# Kendi Geliştirdiğim Uygulamalar
+INSTALLED_APPS += [
+    'Core',
+    'AeroAdmin',
+    'AeroLease',
 ]
 
 MIDDLEWARE = [

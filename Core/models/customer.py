@@ -15,5 +15,8 @@ class Customer(models.Model):
     update_date = models.DateTimeField(auto_now=True)
     delete_date = models.DateTimeField(null=True, blank=True)
 
+    class Meta:
+        db_table = 'customer'
+
     def __str__(self):
-        return f'{self.user.username} - {self.company}'
+        return self.company_name
