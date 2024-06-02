@@ -5,7 +5,7 @@ from Core.models.category import Category
 
 
 class UAV(models.Model):
-    # Kategori, user gibi varlık silimlerinde İHA'lar etkilensin istemiyorum. bu sebeple SET.NULL ve nullable yaptım.
+    # Kategori, user gibi varlık silimlerinde İHA'lar etkilensin istemiyorum. bu sebeple silinmede SET.NULL yaptım.
     name = models.CharField(max_length=255)
     codename = models.CharField(max_length=255)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True, related_name='uavs')
@@ -23,6 +23,9 @@ class UAV(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
     delete_date = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        db_table = 'uav'
 
     def __str__(self):
         return self.name

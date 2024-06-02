@@ -9,3 +9,4 @@
 6. IHAKI-6 Kayıt şablonlarını oluşturdum. Fonkisyonlarını yazdım. Ayrıca login sonrası APP ekranlarında menü düzenlemeleri yaptım.
 7. IHAKI-7 Yönetici panelinin ana sayfasını düzenledim. Taslakları oluşturdum. Hangi sayfaların olacağına karar verdim.
 8. IHAKI-8 Müşteri, iha, kiralama, kategori gibi modelleri oluşturdum. Ayrıca içerde bir konfigrasyon sistemi kurdum. Redis üzerinden ön bellek çalışıyor.
+8. IHAKI-8 Redis önbellek temizleme komutu oluşturdum. Varlıkların ilk migrationunu gerçekleştirdim.

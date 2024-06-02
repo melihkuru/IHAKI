@@ -49,7 +49,7 @@ class RedisClient:
         )
 
     def discover_master(self):
-        addresses = get_redis_addresses(self.SENTINEL_ADDRESSES)
+        addresses = get_redis_addresses(self.ADDRESSES)
         if not addresses:
             raise ValueError("Invalid sentinel addresses")
 

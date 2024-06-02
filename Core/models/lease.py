@@ -27,7 +27,7 @@ class Lease(models.Model):
     lessor_static = models.CharField(max_length=255)
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
     customer_static = models.CharField(max_length=255)
-    uav = models.ForeignKey(UAV, on_delete=models.SET_NULL)
+    uav = models.ForeignKey(UAV, on_delete=models.SET_NULL, null=True, blank=True)
     uav_static = models.CharField(max_length=255)
     lease_start = models.DateTimeField()
     lease_end = models.DateTimeField()
@@ -36,6 +36,9 @@ class Lease(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
     delete_date = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        db_table = 'lease'
 
     def __str__(self):
         return f'Lease by {self.lessor.username} to {self.customer.user.username} for {self.uav.name}'
