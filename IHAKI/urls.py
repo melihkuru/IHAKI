@@ -28,6 +28,7 @@ urlpatterns = [
     path('AeroSuperAdmin/', admin.site.urls),
     path('AeroAdmin/', AeroAdmin.views.app_view),
     path('AeroAdmin/Login/', AeroAdmin.views.login_process, name="aero_admin_login"),
+    path('AeroAdmin/Logout/', AeroAdmin.views.logout_process, name="aero_admin_logout"),
     path('AeroLease/', AeroLease.views.app_view),
     path('AeroLease/Login/', AeroLease.views.login_process, name="aero_lease_login"),
     path('AeroLease/SignUp/', AeroLease.views.signup_process, name="aero_lease_sign_up"),

@@ -1,0 +1,134 @@
+<!-- BEGIN PAGE HEADER-->
+<h3 class="page-title">
+	Müşteri Listesi
+</h3>
+<div class="page-bar">
+	<ul class="page-breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="#/dashboard">Kiralama Yönetim Sistemi</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        <li>
+            <a href="#/customer/list">Müşteri Listesi</a>
+        </li>
+    </ul>
+	<div class="page-toolbar">
+	</div>
+</div>
+<!-- END PAGE HEADER-->
+<!-- BEGIN MAIN CONTENT -->
+<div class="row">
+	<div class="col-md-12">
+		<!-- Begin: life time stats -->
+		<div class="portlet light">
+			<div class="portlet-title">
+				<div class="caption font-green-sharp">
+					<i class="icon-list font-green-sharp"></i>
+					<span class="caption-subject bold uppercase">Müşteriler</span>
+				</div>
+			</div>
+			<div class="portlet-body">
+				<div class="table-container">
+					<table class="table table-striped table-bordered table-hover" id="datatable_ajax">
+						<thead>
+							<tr role="row" class="heading">
+								<th width="2%">
+									<input type="checkbox" class="group-checkable">
+								</th>
+								<th width="5%">
+									Kayıt&nbsp;#
+								</th>
+								<th width="15%">
+									Tarih
+								</th>
+								<th width="15%">
+									Müşteri
+								</th>
+								<th width="10%">
+									İsim
+								</th>
+								<th width="10%">
+									Fiyat
+								</th>
+								<th width="10%">
+									Miktar
+								</th>
+								<th width="10%">
+									Durum
+								</th>
+								<th width="10%">
+									Aksiyon
+								</th>
+							</tr>
+							<tr role="row" class="filter">
+								<td>
+								</td>
+								<td>
+									<input type="text" class="form-control form-filter input-sm" name="order_id">
+								</td>
+								<td>
+									<div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
+										<input type="text" class="form-control form-filter input-sm" readonly name="order_date_from" placeholder="Başlangıç">
+										<span class="input-group-btn">
+										<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
+										</span>
+									</div>
+									<div class="input-group date date-picker" data-date-format="dd/mm/yyyy">
+										<input type="text" class="form-control form-filter input-sm" readonly name="order_date_to" placeholder="Bitiş">
+										<span class="input-group-btn">
+										<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
+										</span>
+									</div>
+								</td>
+								<td>
+									<input type="text" class="form-control form-filter input-sm" name="order_customer_name">
+								</td>
+								<td>
+									<input type="text" class="form-control form-filter input-sm" name="order_ship_to">
+								</td>
+								<td>
+									<div class="margin-bottom-5">
+										<input type="text" class="form-control form-filter input-sm" name="order_price_from" placeholder="From"/>
+									</div>
+									<input type="text" class="form-control form-filter input-sm" name="order_price_to" placeholder="To"/>
+								</td>
+								<td>
+									<div class="margin-bottom-5">
+										<input type="text" class="form-control form-filter input-sm margin-bottom-5 clearfix" name="order_quantity_from" placeholder="From"/>
+									</div>
+									<input type="text" class="form-control form-filter input-sm" name="order_quantity_to" placeholder="To"/>
+								</td>
+								<td>
+									<select name="order_status" class="form-control form-filter input-sm">
+										<option value="">Select...</option>
+										<option value="pending">Pending</option>
+										<option value="closed">Closed</option>
+										<option value="hold">On Hold</option>
+										<option value="fraud">Fraud</option>
+									</select>
+								</td>
+								<td>
+									<div class="margin-bottom-5">
+										<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-search"></i> Ara</button>
+									</div>
+									<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Sıfırla</button>
+								</td>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+				</div>
+			</div>
+		</div>
+		<!-- End: life time stats -->
+	</div>
+</div>
+<!-- END MAIN CONTENT -->
+<!-- BEGIN MAIN JS -->
+<script>
+	TableAjax.init();
+</script>
+<!-- END MAIN JS -->

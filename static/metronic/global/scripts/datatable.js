@@ -46,7 +46,7 @@ var Datatable = function() {
                     "language": { // language settings
                         // metronic spesific
                         "metronicGroupActions": "_TOTAL_ records selected:  ",
-                        "metronicAjaxRequestGeneralError": "Could not complete request. Please check your internet connection",
+                        "metronicAjaxRequestGeneralError": "API bağlantısı sırasında bir hata oluştu.",
 
                         // data tables spesific
                         "lengthMenu": "<span class='seperator'>|</span>View _MENU_ records",
