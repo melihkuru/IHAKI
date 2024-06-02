@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'rest_framework',
 ]
 
 # Kendi Geliştirdiğim Uygulamalar
@@ -174,3 +175,14 @@ SESSION_COOKIE_AGE = int(env('SESSION_COOKIE_AGE_IN_SEC'))
 # Bir sistem içinde birden fazla panel yönettiğimiz için django'nun dahili üye olmayan yönlendirmesi işe yaramıyordu.
 # Bu endpoint geldiğiniz ve gitmek istediğiniz yeri tespit ederek doğru giriş paneline yönlendiriyor.
 LOGIN_URL = '/NotLoginRedirect'
+
+# RESTFreamwork API'lere izin ayarları.
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+}
