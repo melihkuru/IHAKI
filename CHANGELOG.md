@@ -17,3 +17,4 @@
 12. IHAKI-12 RESTFreamwok ile temel endpointleri oluşturdum. Bazı alanları hariç tutup (silindi gibi), yetkileri ayarladım.
 12. IHAKI-13 Datatable, ajax ile ekleme sistemlerini tamamladım. Varlık düzenleme ve silme sistemi yaptım. Dashboard canlı istatistik getirdim.
 12. IHAKI-14 Unit test yazdım. Uygulamayı dockerize ettim. Gerekli bağımlılıkalrla beraber compose paketi oluşturdum.
+12. IHAKI-15 Ekran görüntülerini ve proje özetini ekledim.
