@@ -72,7 +72,7 @@ MetronicApp.controller('LeaseAddController', ['$rootScope', '$scope', 'settings'
                         confirmButtonText: 'Tamam'
                     }).then(() => {
                     });
-                    $location.path('/uav/list');
+                    $location.path('/lease/list');
                 })
                 .catch(function (error) {
                     Swal.fire({
