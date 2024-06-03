@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
     'rest_framework',
 ]
 
@@ -93,7 +94,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': env("POSTGRE_DB_NAME"),
         'USER': env("POSTGRE_USER"),
-        'PASSWORD': env("POSTRE_PASSWORD"),
+        'PASSWORD': env("POSTGRE_PASSWORD"),
         'HOST': env("POSTGRE_HOST"),
         'PORT': env("POSTGRE_PORT"),
     }

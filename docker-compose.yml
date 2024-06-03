@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: ihaki
+      POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ihaki_network
+
+  redis:
+    image: redis:latest
+    networks:
+      - ihaki_network
+    ports:
+      - "6379:6379"
+
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - IHAKI/.env
+    depends_on:
+      - db
+      - redis
+    networks:
+      - ihaki_network
+
+volumes:
+  postgres_data:
+
+networks:
+  ihaki_network:
